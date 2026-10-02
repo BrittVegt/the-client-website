@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Bloemenveld Frankendael</title>
 </head>
 <body>
-    <header>
-        <button>home</button>
-        <button>nieuws</button>
-    </header>
 
-    <main>
-        <h1>Interactieve map</h1>
-        <img src="Screenshot 2026-09-30 113302.png" alt="Hier komt de map" width="300">
-               
-        <div class="gebieden en hun planten">
-            <h2>Voedseleiland 1</h2>
-            <h2>Voedseleiland 2</h2>
-            <h2>Waterplantgebied</h2>
-            <h2>Heuvel 1</h2>
-            <h2>Heuvel 2</h2>
-            <h2>Voedseleiland 3</h2>
-            <h2>Voedseleiland 4</h2>
-            <h2>Heuvel 3</h2>
-            <h2>Sierlint 1</h2>
-            <h2>Voedseleiland 5</h2>
-            <h2>Sierlint 2</h2>
-            <h2>Sierlint 3</h2>
-             
+  <header>
+    <h1 class="logo">Veldverkenner</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="nieuws.html">Nieuws</a>
+    </nav>
+</header>
+
+    <main class="kaart-pagina">
+
+        <div class="kaart">
+            <img src="Screenshot 2026-09-30 113302.png" alt="Kaart van het bloemenveld">
         </div>
+
+
+        <aside class="gebieden" id="gebieden">
+
+            <div class="gebieden-header">
+                <h2>12 zones</h2>
+                <p>Klik op een zone voor meer info</p>
+            </div>
+
+            <ul class="gebieden-lijst">
+                <li id="voedseleiland-1">Voedseleiland 1</li>
+                <li id="voedseleiland-2">Voedseleiland 2</li>
+                <li id="waterplantgebied">Waterplantgebied</li>
+                <li id="heuvel-1">Heuvel 1</li>
+                <li id="heuvel-2">Heuvel 2</li>
+                <li id="voedseleiland-3">Voedseleiland 3</li>
+                <li id="voedseleiland-4">Voedseleiland 4</li>
+                <li id="heuvel-3">Heuvel 3</li>
+                <li id="sierlint-1">Sierlint 1</li>
+                <li id="voedseleiland-5">Voedseleiland 5</li>
+                <li id="sierlint-2">Sierlint 2</li>
+                <li id="sierlint-3">Sierlint 3</li>
+            </ul>
+
+        </aside>
+
     </main>
 
-    <footer> 
-
-    </footer>
 </body>
 </html>

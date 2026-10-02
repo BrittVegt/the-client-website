@@ -1,1 +1,168 @@
-/* CSS */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    color: #222;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;   /* logo links, menu rechts */
+    align-items: center;              /* verticaal gecentreerd */
+    padding: 16px 32px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);  /* subtiele schaduw onder de balk */
+    flex-shrink: 0;
+}
+
+/* Logo */
+.logo {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #222;
+}
+
+/* Menu */
+header nav {
+    display: flex;
+    gap: 8px;                          /* ruimte tussen de links */
+}
+
+header nav a {
+    padding: 8px 16px;
+    text-decoration: none;             /* haalt de underline weg */
+    color: #444;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+}
+
+header nav a:hover {
+    background: #c46b6b;
+    color: #111;
+}
+
+/* KAART-PAGINA: vult de rest van het scherm */
+.kaart-pagina {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    min-height: 0;              /* belangrijk: laat grid scrollen binnen kolommen */
+    position: relative;
+}
+
+/* KAART: vult de linkerkant */
+.kaart {
+    position: relative;
+    overflow: hidden;
+    background: #90cf99;
+    padding: 20px
+}
+
+.kaart img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;   /* hele kaart zichtbaar, met wit eromheen */
+    display: block;
+    border-radius: 8px; 
+}
+
+/* ZIJKOLOM: scrollt apart */
+.gebieden {
+    background: #fff;
+    border-left: 1px solid #e5e5e5;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.06);   /* zachte schaduw richting kaart */
+}
+
+/* Kop bovenin de zijkolom */
+.gebieden-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
+}
+
+.gebieden-header h2 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.gebieden-header p {
+    margin: 4px 0 0 0;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Lijst met zones */
+.gebieden-lijst {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.gebieden-lijst li {
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    background: #fafafa;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.gebieden-lijst li:hover {
+    background: #f0f0f0;
+    border-color: #bbb;
+}
+
+.gebieden-lijst li:active {
+    transform: scale(0.98);
+}
+
+/* Scrollbalk netjes */
+.gebieden::-webkit-scrollbar {
+    width: 8px;
+}
+
+.gebieden::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.gebieden::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* MOBIEL: zijkolom onder de kaart */
+@media (max-width: 800px) {
+    .kaart-pagina {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh auto;
+    }
+
+    .gebieden {
+        border-left: none;
+        border-top: 1px solid #e5e5e5;
+        box-shadow: none;
+    }
+}
