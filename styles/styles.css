@@ -82,8 +82,7 @@ nav a:hover {
     outline: none;
     border-radius: 30px;
 }
-
-.zoekbalk input::placeholder {
+    .zoekbalk input::placeholder {
     color: #88aa88;
 }
 
@@ -109,7 +108,7 @@ nav a:hover {
 }
 
 .kaart img {
-    width: 100%;
+    width: 50%;
     height: 100%;
     object-fit: contain;
     border-radius: 8px;
@@ -195,4 +194,12 @@ nav a:hover {
     font-size: 14px;
     background-color: white;
     border-top: 1px solid var(--groen-100);
+}
+
+/* Dit is ons eerste breakpoint, waarbij we het body element in Grid Layout zetten */
+@media (min-width:678px) {
+    display: flex;
+    article 
+      display: flex;
+
 }
