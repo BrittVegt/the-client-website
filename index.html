@@ -8,46 +8,114 @@
 </head>
 <body>
 
-  <header>
-    <h1 class="logo">Veldverkenner</h1>
+<header>
+    <h1 class="logo"> Veldverkenner</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="nieuws.html">Nieuws</a>
     </nav>
 </header>
 
-    <main class="kaart-pagina">
+<main class="kaart-pagina">
 
-        <div class="kaart">
-            <img src="Screenshot 2026-09-30 113302.png" alt="Kaart van het bloemenveld">
+    <div class="zoekbalk">
+        <input type="text" placeholder="Zoek een zone, bijv. 'Heuvel 1'...">
+        <button type="button" aria-label="Zoeken">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            </svg>
+        </button>
+    </div>
+
+    
+    <div class="kaart">
+        <img src="Screenshot 2026-09-30 113302.png" alt="Kaart van het bloemenveld">
+
+    </div>
+
+    <aside class="gebieden" id="gebieden">
+        <div class="gebieden-header">
+            <h2>12 zones</h2>
+            <p>Klikk op de button voor meer info over heyt gebied</p>
         </div>
 
+        <ul class="gebieden-lijst">
+            <li id="voedseleiland-1">
+                <details>
+                    <summary></summary> Voedseleiland 1</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="voedseleiland-2">
+                <details>
+                    <summary> Voedseleiland 2</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="waterplantgebied">
+                <details>
+                    <summary> Waterplantgebied</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="heuvel-1">
+                <details>
+                    <summary>Heuvel 1</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="heuvel-2">
+                <details>
+                    <summary>Heuvel 2</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="voedseleiland-3">
+                <details>
+                    <summary> Voedseleiland 3</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="voedseleiland-4">
+                <details>
+                    <summary>Voedseleiland 4</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="heuvel-3">
+                <details>
+                    <summary>Heuvel 3</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="sierlint-1">
+                <details>
+                    <summary>Sierlint 1</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="voedseleiland-5">
+                <details>
+                    <summary>Voedseleiland 5</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="sierlint-2">
+                <details>
+                    <summary>Sierlint 2</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+            <li id="sierlint-3">
+                <details>
+                    <summary>Sierlint 3</summary>
+                    <p>Hier komt info over dit gebied.</p>
+                </details>
+            </li>
+        </ul>
+    </aside>
 
-        <aside class="gebieden" id="gebieden">
-
-            <div class="gebieden-header">
-                <h2>12 zones</h2>
-                <p>Klik op een zone voor meer info</p>
-            </div>
-
-            <ul class="gebieden-lijst">
-                <li id="voedseleiland-1">Voedseleiland 1</li>
-                <li id="voedseleiland-2">Voedseleiland 2</li>
-                <li id="waterplantgebied">Waterplantgebied</li>
-                <li id="heuvel-1">Heuvel 1</li>
-                <li id="heuvel-2">Heuvel 2</li>
-                <li id="voedseleiland-3">Voedseleiland 3</li>
-                <li id="voedseleiland-4">Voedseleiland 4</li>
-                <li id="heuvel-3">Heuvel 3</li>
-                <li id="sierlint-1">Sierlint 1</li>
-                <li id="voedseleiland-5">Voedseleiland 5</li>
-                <li id="sierlint-2">Sierlint 2</li>
-                <li id="sierlint-3">Sierlint 3</li>
-            </ul>
-
-        </aside>
-
-    </main>
+</main>
 
 </body>
 </html>

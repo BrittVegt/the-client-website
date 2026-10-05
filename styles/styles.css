@@ -1,168 +1,225 @@
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: sans-serif;
-    color: #222;
+/*kleueren*/
+:root {
+    --groen-50:  #ECF9EB;
+    --groen-100: #CAEEC8;
+    --groen-200: #A7E3A5;
+    --groen-300: #77D474;
+    --groen-400: #63CE5F;
+    --groen-500: #40C33C;
+    --groen-600: #35A031;
+    --groen-700: #297D26;
+    --groen-800: #1E5A1C;
+    --groen-900: #123711;
+    --groen-950: #061406;
 }
 
 body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-color: var(--groen-50);
+    color: var(--groen-950);
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
 }
 
-/* HEADER */
+/* header */
 header {
     display: flex;
-    justify-content: space-between;   /* logo links, menu rechts */
-    align-items: center;              /* verticaal gecentreerd */
-    padding: 16px 32px;
-    background: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);  /* subtiele schaduw onder de balk */
-    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 30px;
+    border-bottom: 2px solid var(--groen-100);
 }
 
-/* Logo */
 .logo {
+    font-size: 20px;
+    color: var(--groen-800);
     margin: 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: #222;
 }
 
-/* Menu */
-header nav {
-    display: flex;
-    gap: 8px;                          /* ruimte tussen de links */
+nav a {
+    color: var(--groen-800);
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: bold;
 }
 
-header nav a {
-    padding: 8px 16px;
-    text-decoration: none;             /* haalt de underline weg */
-    color: #444;
-    font-size: 0.95rem;
-    border-radius: 6px;
-    transition: background 0.15s, color 0.15s;
+nav a:hover {
+    background-color: var(--groen-100);
+    border-radius: 20px;
 }
 
-header nav a:hover {
-    background: #c46b6b;
-    color: #111;
-}
-
-/* KAART-PAGINA: vult de rest van het scherm */
+/* de hele pagina met kaart en zijbalk */
 .kaart-pagina {
-    flex: 1;
     display: grid;
-    grid-template-columns: 1fr 360px;
-    min-height: 0;              /* belangrijk: laat grid scrollen binnen kolommen */
-    position: relative;
+    grid-template-columns: 1fr 340px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "zoek gebieden"
+        "kaart gebieden";
+    flex: 1;
 }
 
-/* KAART: vult de linkerkant */
+/* zoekbalk die doet nog niks */
+.zoekbalk {
+    grid-area: zoek;
+    display: flex;
+    margin: 20px 20px 0 20px;
+    background-color: white;
+    border: 1px solid var(--groen-100);
+    border-radius: 30px;
+    max-width: 500px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.zoekbalk input {
+    border: none;
+    padding: 14px 20px;
+    font-size: 15px;
+    flex: 1;
+    background: none;
+    outline: none;
+    border-radius: 30px;
+}
+
+.zoekbalk input::placeholder {
+    color: #88aa88;
+}
+
+.zoekbalk button {
+    background-color: var(--groen-600);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 4px;
+    cursor: pointer;
+}
+
+
+/* kaartvlak */
 .kaart {
-    position: relative;
-    overflow: hidden;
-    background: #90cf99;
-    padding: 20px
+    grid-area: kaart;
+    background-color: var(--groen-100);
+    margin: 20px 0 20px 20px;
+    padding: 20px;
+    border-radius: 12px;
 }
 
 .kaart img {
     width: 100%;
-    height: 80%;
-    object-fit: contain;   /* hele kaart zichtbaar, met wit eromheen */
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: white;
     display: block;
-    border-radius: 8px; 
 }
 
-/* ZIJKOLOM: scrollt apart */
+/* zijbalk met de zones */
 .gebieden {
-    background: #fff;
-    border-left: 1px solid #e5e5e5;
+    grid-area: gebieden;
+    background-color: white;
+    border-left: 1px solid var(--groen-100);
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.06);   /* zachte schaduw richting kaart */
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Kop bovenin de zijkolom */
 .gebieden-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid #eee;
+    padding: 18px;
+    border-bottom: 1px solid var(--groen-100);
     position: sticky;
     top: 0;
-    background: #fff;
-    z-index: 2;
+    background-color: white;
 }
 
 .gebieden-header h2 {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: 18px;
+    color: var(--groen-800);
 }
 
 .gebieden-header p {
-    margin: 4px 0 0 0;
-    font-size: 0.85rem;
-    color: #777;
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    color: var(--groen-700);
 }
 
-/* Lijst met zones */
 .gebieden-lijst {
     list-style: none;
-    padding: 10px;
     margin: 0;
+    padding: 12px;
 }
 
-.gebieden-lijst li {
-    padding: 14px 16px;
+.gebieden-lijst details {
     margin-bottom: 8px;
-    border: 1px solid #e5e5e5;
-    border-radius: 6px;
-    background: #fafafa;
+    border: 1px solid var(--groen-100);
+    border-radius: 8px;
+    background-color: var(--groen-50);
+}
+
+.gebieden-lijst summary {
+    padding: 13px 15px;
     cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    font-weight: bold;
+    color: var(--groen-900);
+    list-style: none;
 }
 
-.gebieden-lijst li:hover {
-    background: #f0f0f0;
-    border-color: #bbb;
+.gebieden-lijst summary::-webkit-details-marker {
+    display: none;
 }
 
-.gebieden-lijst li:active {
-    transform: scale(0.98);
+.gebieden-lijst summary::after {
+    content: "+";
+    float: right;
+    color: var(--groen-600);
+    font-weight: bold;
 }
 
-/* Scrollbalk netjes */
-.gebieden::-webkit-scrollbar {
-    width: 8px;
+.gebieden-lijst details[open] summary {
+    background-color: var(--groen-500);
+    color: white;
+    border-radius: 8px 8px 0 0;
 }
 
-.gebieden::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
+.gebieden-lijst details[open] summary::after {
+    content: "−";
+    color: white;
 }
 
-.gebieden::-webkit-scrollbar-track {
-    background: transparent;
+.gebieden-lijst p {
+    margin: 0;
+    padding: 12px 15px;
+    font-size: 14px;
+    background-color: white;
+    border-top: 1px solid var(--groen-100);
 }
 
-/* MOBIEL: zijkolom onder de kaart */
+/* voor als het scherm klein is */
 @media (max-width: 800px) {
     .kaart-pagina {
         grid-template-columns: 1fr;
-        grid-template-rows: 50vh auto;
+        grid-template-rows: auto 50vh auto;
+        grid-template-areas:
+            "zoek"
+            "kaart"
+            "gebieden";
+    }
+
+    .zoekbalk {
+        margin: 15px;
+        max-width: none;
+    }
+
+    .kaart {
+        margin: 0 15px;
     }
 
     .gebieden {
         border-left: none;
-        border-top: 1px solid #e5e5e5;
-        box-shadow: none;
+        border-top: 1px solid var(--groen-100);
     }
 }
