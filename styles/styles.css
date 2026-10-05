@@ -197,9 +197,6 @@ nav a:hover {
 }
 
 /* Dit is ons eerste breakpoint, waarbij we het body element in Grid Layout zetten */
-@media (min-width:678px) {
-    display: flex;
-    article 
-      display: flex;
+@media (min-width: 600px) {
 
 }
