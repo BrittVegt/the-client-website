@@ -32,11 +32,10 @@ header {
     padding: 15px 30px;
     border-bottom: 2px solid var(--groen-100);
 }
-
-.logo {
-    font-size: 20px;
-    color: var(--groen-800);
-    margin: 0;
+    .logo {
+     font-size: 20px;
+     color: var(--groen-800);
+     margin: 0;
 }
 
 nav a {
@@ -196,30 +195,4 @@ nav a:hover {
     font-size: 14px;
     background-color: white;
     border-top: 1px solid var(--groen-100);
-}
-
-/* voor als het scherm klein is */
-@media (max-width: 800px) {
-    .kaart-pagina {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 50vh auto;
-        grid-template-areas:
-            "zoek"
-            "kaart"
-            "gebieden";
-    }
-
-    .zoekbalk {
-        margin: 15px;
-        max-width: none;
-    }
-
-    .kaart {
-        margin: 0 15px;
-    }
-
-    .gebieden {
-        border-left: none;
-        border-top: 1px solid var(--groen-100);
-    }
 }
