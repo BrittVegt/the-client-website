@@ -196,7 +196,20 @@ nav a:hover {
     border-top: 1px solid var(--groen-100);
 }
 
-/* Dit is ons eerste breakpoint, waarbij we het body element in Grid Layout zetten */
-@media (min-width: 600px) {
+/* De media querie (de 3 template areas die onder elkaar moeten)*/
 
+@media (max-width: 780px) {
+    .kaart-pagina {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "zoek"
+            "kaart"
+            "gebieden";
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
