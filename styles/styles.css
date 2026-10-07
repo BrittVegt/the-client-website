@@ -2,8 +2,6 @@
 body {
     margin: 0;
     font-family: system-ui, sans-serif;
-    background-color: var(--groen-50);
-    color: var(--groen-950);
     min-height: 50vh;
     display: flex;
     flex-direction: column;
@@ -12,39 +10,51 @@ body {
 /* header */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 15px 30px;
-    border-bottom: 2px solid var(--groen-100);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    @media (min-width: 780px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 15px 30px;
+    }
 }
-    .logo {
+.logo {
      font-size: 20px;
-     color: var(--groen-800);
      margin: 0;
 }
 
 nav a {
-    color: var(--groen-800);
     text-decoration: none;
     padding: 8px 15px;
     font-weight: bold;
 }
 
 nav a:hover {
-    background-color: var(--groen-100);
     border-radius: 20px;
 }
 
 /* de hele pagina met kaart en zijbalk */
-.kaart-pagina {
-    display: grid;
+.kaart-pagina {  
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "zoek"
+            "kaart"
+            "gebieden";
+        flex: 1;
+  
+    @media  (min-width: 780px) {
     grid-template-columns: 1fr 340px;
     grid-template-rows: auto 1fr;
     grid-template-areas:
         "zoek gebieden"
         "kaart gebieden";
-    flex: 1;
+   
+}
 }
 
 /* zoekbalk die doet nog niks */
@@ -52,8 +62,6 @@ nav a:hover {
     grid-area: zoek;
     display: flex;
     margin: 20px 20px 0 20px;
-    background-color: white;
-    border: 1px solid var(--groen-100);
     border-radius: 30px;
     max-width: 500px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
@@ -68,12 +76,8 @@ nav a:hover {
     outline: none;
     border-radius: 30px;
 }
-    .zoekbalk input::placeholder {
-    color: #88aa88;
-}
 
 .zoekbalk button {
-    background-color: var(--groen-600);
     color: white;
     border: none;
     width: 45px;
@@ -87,7 +91,6 @@ nav a:hover {
 /* kaartvlak */
 .kaart {
     grid-area: kaart;
-    background-color: var(--groen-100);
     margin: 20px 0 20px 20px;
     padding: 20px;
     border-radius: 12px;
@@ -106,14 +109,12 @@ nav a:hover {
 .gebieden {
     grid-area: gebieden;
     background-color: white;
-    border-left: 1px solid var(--groen-100);
     overflow-y: auto;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .gebieden-header {
     padding: 18px;
-    border-bottom: 1px solid var(--groen-100);
     position: sticky;
     top: 0;
     background-color: white;
@@ -122,13 +123,11 @@ nav a:hover {
 .gebieden-header h2 {
     margin: 0;
     font-size: 18px;
-    color: var(--groen-800);
 }
 
 .gebieden-header p {
     margin: 5px 0 0 0;
     font-size: 13px;
-    color: var(--groen-700);
 }
 
 .gebieden-lijst {
@@ -139,9 +138,7 @@ nav a:hover {
 
 .gebieden-lijst details {
     margin-bottom: 8px;
-    border: 1px solid var(--groen-100);
     border-radius: 8px;
-    background-color: var(--groen-50);
 }
 
 .gebieden-lijst summary {
@@ -159,12 +156,10 @@ nav a:hover {
 .gebieden-lijst summary::after {
     content: "+";
     float: right;
-    color: var(--groen-600);
     font-weight: bold;
 }
 
 .gebieden-lijst details[open] summary {
-    background-color: var(--groen-500);
     color: white;
     border-radius: 8px 8px 0 0;
 }
@@ -179,23 +174,4 @@ nav a:hover {
     padding: 12px 15px;
     font-size: 14px;
     background-color: white;
-    border-top: 1px solid var(--groen-100);
-}
-
-/* De media querie (de 3 template areas die onder elkaar moeten)*/
-
-@media (max-width: 780px) {
-    .kaart-pagina {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "zoek"
-            "kaart"
-            "gebieden";
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
 }
