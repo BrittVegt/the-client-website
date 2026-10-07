@@ -96,7 +96,7 @@ nav a:hover {
 
 /* kaartvlak */
 .kaart {
-    grid-area: kaartt;
+    grid-area: kaart;
     margin: 20px 0 20px 20px;
     padding: 20px;
     border-radius: 12px;
