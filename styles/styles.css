@@ -1,17 +1,3 @@
-/*kleueren*/
-:root {
-    --groen-50:  #ECF9EB;
-    --groen-100: #CAEEC8;
-    --groen-200: #A7E3A5;
-    --groen-300: #77D474;
-    --groen-400: #63CE5F;
-    --groen-500: #40C33C;
-    --groen-600: #35A031;
-    --groen-700: #297D26;
-    --groen-800: #1E5A1C;
-    --groen-900: #123711;
-    --groen-950: #061406;
-}
 
 body {
     margin: 0;
